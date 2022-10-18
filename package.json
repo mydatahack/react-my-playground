@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "homepage": "https://mydatahack.github.io/react-micro-frontends-example-app1",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +16,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
-    "styled-component": "^2.8.0",
+    "styled-components": "^5.3.6",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
@@ -42,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26",
+    "eslint-config-mdh-typescript-react": "^1.5.0"
   }
 }

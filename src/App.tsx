@@ -1,5 +1,3 @@
-import './App.css';
+import './App.css'
 
-export const App = () => (
-  <div>App 1</div>
-  )
+export const App = () => <div>App 1</div>

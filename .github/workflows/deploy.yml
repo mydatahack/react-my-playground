@@ -35,4 +35,3 @@ jobs:
           REPOSITORY_NAME: mydatahack/mydatahack.github.io
           TARGET_FOLDER: react-micro-frontends-example-app1
           CLEAN: true # Automatically remove deleted files from the deploy branch
-

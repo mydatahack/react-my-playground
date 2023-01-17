@@ -1,6 +1,8 @@
-import { Field, Form, Formik, FormikProps } from 'formik'
 import { useCallback } from 'react'
+import { Field, Form, Formik, FormikProps } from 'formik'
+
 import { CustomerInfoFormValues } from './CustomerInfoForm.types'
+import { TextInputFormik } from './TextInputFormik/TextInputFormik'
 
 const initialValues = {
   firstName: '',
@@ -25,6 +27,7 @@ export const CustomerInfoForm = () => {
       {(props: FormikProps<CustomerInfoFormValues>) => (
         <Form>
           <Field type="text" name="firstName" id="firstName" />
+          <TextInputFormik name="lastName" label="Last Name" />
           <button type="submit">Submit</button>
         </Form>
       )}

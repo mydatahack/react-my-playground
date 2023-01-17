@@ -1,3 +1,10 @@
 import './App.css'
 
-export const App = () => <div>App 1</div>
+import { CustomerInfoForm } from './components/CustomerInfoForm'
+
+export const App = () => (
+  <>
+    <h1>Customer Form</h1>
+    <CustomerInfoForm />
+  </>
+)

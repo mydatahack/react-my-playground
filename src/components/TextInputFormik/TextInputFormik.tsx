@@ -1,18 +1,21 @@
 import { TextField } from '@mui/material'
-import { useField } from 'formik'
+import { FieldInputProps, useField } from 'formik'
 
 interface TextInputFormikProps {
   name: string
   label: string
 }
 export const TextInputFormik = ({ name, label }: TextInputFormikProps) => {
-  const [field, , helpers] = useField({ name })
-  const { value, onBlur } = field
-  const { setValue } = helpers
-
-  console.log(value)
+  const [field] = useField({ name })
+  const { value, onBlur, onChange } = field
 
   return (
-    <TextField id={name} label={label} onChange={setValue} onBlur={onBlur} />
+    <TextField
+      id={name}
+      label={label}
+      onChange={onChange}
+      onBlur={onBlur}
+      value={value}
+    />
   )
 }

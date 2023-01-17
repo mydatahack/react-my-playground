@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material'
-import { FieldInputProps, useField } from 'formik'
+import { useField } from 'formik'
 
 interface TextInputFormikProps {
   name: string

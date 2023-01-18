@@ -1,12 +1,11 @@
 import './App.css'
 
-import { Container } from '@mui/material'
-
-import { CustomerInfoForm } from './components/CustomerInfoForm'
+import { CustomerInfoForm } from './components/CustomerInfoForm/CustomerInfoForm'
+import { PageLayout } from './components/PageLayout/PageLayout'
 
 export const App = () => (
-  <Container>
+  <PageLayout>
     <h1>Customer Form</h1>
     <CustomerInfoForm />
-  </Container>
+  </PageLayout>
 )

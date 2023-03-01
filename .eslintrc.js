@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: ['eslint-config-mdh-typescript-react'],
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
   },
   overrides: [{ files: ['**/*.ts'] }],
   rules: {},

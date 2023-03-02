@@ -26,7 +26,7 @@ export const CustomerInfoForm = () => {
       initialValues={initialValues}
       onSubmit={onSubmit}
     >
-      <Form>
+      <Form data-testid="customer-info-form">
         <Box display="flex" flexDirection="column" rowGap="20px">
           <TextInputFormik name="firstName" label="First Name" />
           <TextInputFormik name="lastName" label="Last Name" />

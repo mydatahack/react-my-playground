@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { Button, Grid } from '@mui/material'
+import { Box, Button, Grid } from '@mui/material'
 import { Form, Formik } from 'formik'
 
 import { TextInputFormik } from '../TextInputFormik/TextInputFormik'
@@ -27,15 +27,13 @@ export const CustomerInfoForm = () => {
       onSubmit={onSubmit}
     >
       <Form>
-        <Grid container>
-          <Grid container direction="column" md={4} sm={12} rowGap="15px">
-            <TextInputFormik name="firstName" label="First Name" />
-            <TextInputFormik name="lastName" label="Last Name" />
-            <Button variant="contained" type="submit">
-              Submit
-            </Button>
-          </Grid>
-        </Grid>
+        <Box display="flex" flexDirection="column" rowGap="20px">
+          <TextInputFormik name="firstName" label="First Name" />
+          <TextInputFormik name="lastName" label="Last Name" />
+          <Button variant="contained" type="submit">
+            Submit
+          </Button>
+        </Box>
       </Form>
     </Formik>
   )

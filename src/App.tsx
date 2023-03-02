@@ -4,8 +4,7 @@ import { CustomerInfoForm } from './components/CustomerInfoForm/CustomerInfoForm
 import { PageLayout } from './components/PageLayout/PageLayout'
 
 export const App = () => (
-  <PageLayout>
-    <h1>Customer Form</h1>
+  <PageLayout title="Customer Form">
     <CustomerInfoForm />
   </PageLayout>
 )

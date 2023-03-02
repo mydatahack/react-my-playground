@@ -31,7 +31,7 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.REACT_MICROFRONTENDS_EXAMPLE }}
           BRANCH: master # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          FOLDER: dist # The folder the action should deploy.
           REPOSITORY_NAME: mydatahack/mydatahack.github.io
           TARGET_FOLDER: react-micro-frontends-example-app1
           CLEAN: true # Automatically remove deleted files from the deploy branch

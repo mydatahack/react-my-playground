@@ -11,6 +11,8 @@ yarn start
 
 - Formik
 - Material UI with styled-component
+- Vite for development & build
+- jest & react-testing-library
 
 ## Using Material UI
 

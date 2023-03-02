@@ -1,46 +1,36 @@
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
-import { Button, MobileStepper, useTheme } from '@mui/material'
+import { useState } from 'react'
+import { Button, Grid, Step, StepLabel, Stepper } from '@mui/material'
+
+const stepLabels = ['step 1', 'step 2', 'step 3']
 
 export const FormStepper = () => {
-  const theme = useTheme()
-  const handleBack = () => null
-  const handleNext = () => null
-  const activeStep = 1
+  const [currentStep, setCurrentStep] = useState(0)
+
   return (
-    <MobileStepper
-      variant="dots"
-      steps={3}
-      activeStep={activeStep}
-      nextButton={
+    <Grid container direction="column">
+      <Stepper activeStep={currentStep}>
+        {stepLabels.map((label) => (
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+      <Grid container justifyContent="space-between">
         <Button
-          size="small"
-          onClick={handleNext}
-          // disabled={activeStep === 5}
+          color="primary"
+          disabled={currentStep === 0}
+          onClick={() => setCurrentStep((prevStep) => prevStep - 1)}
         >
-          Next
-          {theme.direction === 'rtl' ? (
-            // eslint-disable-next-line react/jsx-no-undef
-            <KeyboardArrowLeft />
-          ) : (
-            <KeyboardArrowRight />
-          )}
-        </Button>
-      }
-      backButton={
-        <Button
-          size="small"
-          onClick={handleBack}
-          // disabled={activeStep === 0}
-        >
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowRight />
-          ) : (
-            <KeyboardArrowLeft />
-          )}
           Back
         </Button>
-      }
-    />
+        <Button
+          color="secondary"
+          disabled={currentStep === stepLabels.length}
+          onClick={() => setCurrentStep((prevStep) => prevStep + 1)}
+        >
+          Next
+        </Button>
+      </Grid>
+    </Grid>
   )
 }

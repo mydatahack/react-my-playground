@@ -2,7 +2,7 @@ import './index.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 import { App } from './App'
 import { worker } from './mock/browser'
@@ -17,11 +17,12 @@ const root = ReactDOM.createRoot(
 )
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* BrowserRouter doesn't work with gitpage because the root is not `/` */}
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/msw-test" element={<MswTest />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 )

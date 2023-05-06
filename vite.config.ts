@@ -6,4 +6,5 @@ import viteTsconfigPaths from 'vite-tsconfig-paths'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
+  base: './', // This makes assets path relative in the main index.html file.
 })

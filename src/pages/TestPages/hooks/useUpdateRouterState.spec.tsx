@@ -4,27 +4,45 @@ import {
   RouteObject,
   RouterProvider,
 } from 'react-router-dom'
-import { render, waitFor } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import { RouterTestStateSchemaType } from './useGetRouterState'
 import { useUpdateRouterState } from './useUpdateRouterState'
+
+// const Component = ({
+//   state,
+//   path,
+// }: {
+//   state: RouterTestStateSchemaType['myState']
+//   path: string
+// }) => {
+//   const { updateRouterState } = useUpdateRouterState()
+
+//   useEffect(() => {
+//     updateRouterState(state, path)
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [])
+
+//   return <div />
+// }
 
 const Component = ({
   state,
   path,
 }: {
   state: RouterTestStateSchemaType['myState']
-  path?: string
+  path: string
 }) => {
   const { updateRouterState } = useUpdateRouterState()
-
-  useEffect(() => {
-    console.log(state, path)
-    updateRouterState(state, path)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  return <div />
+  return (
+    <>
+      <button onClick={() => updateRouterState(state, path)} type="button">
+        open
+      </button>
+      <div />
+    </>
+  )
 }
 
 const routeConfig: RouteObject[] = [
@@ -43,7 +61,7 @@ const TestComponentWithRouter = () => {
 describe('useUpdateRouterState', () => {
   it('should correctly update history state', async () => {
     render(<TestComponentWithRouter />)
-
+    userEvent.click(screen.getByRole('button', { name: /open/i }))
     await waitFor(() => {
       expect(router.state.location.pathname).toBe('/test')
     })

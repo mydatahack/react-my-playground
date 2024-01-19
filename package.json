@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mdhnpm/react-mdh-blog-components": "^2.5.0",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",

@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const router = createBrowserRouter([...routeConfig], {
   // Need better logic to set basename for github page
-  basename: '/react-my-playground',
+  // basename: '/react-my-playground',
 })
 
 const root = ReactDOM.createRoot(

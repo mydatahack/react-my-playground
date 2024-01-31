@@ -1,6 +1,17 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
 import { Button } from './components/Button'
 import { useGetRouterState } from './hooks/useGetRouterState'
 import { useUpdateRouterState } from './hooks/useUpdateRouterState'
+
+const LocationTracker = () => {
+  const location = useLocation()
+  useEffect(() => {
+    console.log('state', location.state)
+  }, [location])
+  return null
+}
 
 export const About = () => {
   const { updateRouterState } = useUpdateRouterState()
@@ -26,6 +37,7 @@ export const About = () => {
       <div className="my-8">
         <p>Router State: {JSON.stringify(state)}</p>
       </div>
+      <LocationTracker />
     </div>
   )
 }

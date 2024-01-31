@@ -1,10 +1,17 @@
+import clsx from 'clsx'
+
 import { ROOT } from '../../routes/routes'
 
 export const Header = () => {
   return (
     <ul className="flex gap-8 my-8">
       <li>
-        <a href={ROOT.path}>Home</a>
+        <a
+          className={clsx('hover:underline', 'active:underline')}
+          href={ROOT.path}
+        >
+          Home
+        </a>
       </li>
       <li>
         <a href={ROOT.TEST_PAGES.HOME.path}>Test Page Home</a>

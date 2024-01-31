@@ -2,7 +2,7 @@ import { ROOT } from '../../routes/routes'
 
 export const Header = () => {
   return (
-    <ul>
+    <ul className="flex gap-8 my-8">
       <li>
         <a href={ROOT.path}>Home</a>
       </li>

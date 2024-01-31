@@ -10,23 +10,6 @@ import userEvent from '@testing-library/user-event'
 import { RouterTestStateSchemaType } from './useGetRouterState'
 import { useUpdateRouterState } from './useUpdateRouterState'
 
-// const Component = ({
-//   state,
-//   path,
-// }: {
-//   state: RouterTestStateSchemaType['myState']
-//   path: string
-// }) => {
-//   const { updateRouterState } = useUpdateRouterState()
-
-//   useEffect(() => {
-//     updateRouterState(state, path)
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, [])
-
-//   return <div />
-// }
-
 const Component = ({
   state,
   path,
@@ -64,6 +47,9 @@ describe('useUpdateRouterState', () => {
     userEvent.click(screen.getByRole('button', { name: /open/i }))
     await waitFor(() => {
       expect(router.state.location.pathname).toBe('/test')
+    })
+    expect(router.state.location.state).toEqual({
+      myState: { testState: 'state 1' },
     })
   })
 })

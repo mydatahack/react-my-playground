@@ -4,7 +4,7 @@ import { Header } from './Header'
 
 export const Layout = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <Header />
       <Outlet />
     </div>

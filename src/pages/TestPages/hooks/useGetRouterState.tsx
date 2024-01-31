@@ -9,7 +9,7 @@ export type RouterTestState = z.infer<typeof RouterStateSchema>
 const RouterTestStateSchema = z.object({
   myState: z.object({
     testState: RouterStateSchema,
-    hasBlurAndFade: z.optional(z.boolean()),
+    usefulBooleanValue: z.optional(z.boolean()),
   }),
 })
 

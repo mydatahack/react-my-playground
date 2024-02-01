@@ -4,9 +4,7 @@ import {
   MemoryRouter,
   Route,
   RouteObject,
-  Router,
   RouterProvider,
-  Routes,
 } from 'react-router-dom'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'

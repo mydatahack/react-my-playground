@@ -1,5 +1,7 @@
 # My Playground React App
 
+This is an stand alone react app. It is migrated to https://github.com/mydatahack/nx-monorepo-react-playground.
+
 ## Get started
 
 ```bash

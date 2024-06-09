@@ -32,6 +32,6 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.REACT_MICROFRONTENDS_EXAMPLE }}
           BRANCH: master # The branch the action should deploy to.
           FOLDER: dist # The folder the action should deploy.
-          REPOSITORY_NAME: mydatahack/mydatahack.github.io
+          REPOSITORY_NAME: takahirohonda/takahirohonda.github.io
           TARGET_FOLDER: react-my-playground
           CLEAN: true # Automatically remove deleted files from the deploy branch

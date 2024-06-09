@@ -6,7 +6,7 @@ import {
   RouteObject,
   RouterProvider,
 } from 'react-router-dom'
-import { render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { About } from './About'
@@ -16,11 +16,14 @@ describe('About', () => {
   it('should change the router state - with MemoryRouter', async () => {
     const user = userEvent.setup()
     render(<About />, { wrapper: MemoryRouter })
-    await user.click(
-      screen.getByRole('button', { name: /update router state/i })
+    act(() =>
+      user.click(screen.getByRole('button', { name: /update router state/i }))
     )
+
     expect(
-      screen.getByText(/{"testState":"state 2","usefulBooleanValue":true}/i)
+      await screen.findByText(
+        /{"testState":"state 2","usefulBooleanValue":true}/i
+      )
     ).toBeVisible()
   })
 
